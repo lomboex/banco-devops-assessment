@@ -12,11 +12,11 @@ async def validate_auth_headers(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Missing Authentication Headers",
         )
-    
+
     if x_parse_rest_api_key != settings.API_KEY:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="Invalid API Key",
         )
-    
+
     return True
