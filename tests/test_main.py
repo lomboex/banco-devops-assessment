@@ -10,6 +10,7 @@ client = TestClient(app)
 API_KEY = "2f5ae96c-b558-4c7b-a590-a501ae1c3f6c"
 VALID_JWT = "random-jwt-token"
 
+
 def test_health_check():
     """Requirement: /healthz must return 200"""
     response = client.get("/healthz")
@@ -86,4 +87,4 @@ def test_input_validation():
         "timeToLifeSec": "not-an-int" 
     }
     response = client.post("/DevOps", json=payload, headers=headers)
-    assert response.status_code == 422 # FastAPI default validation error
+    assert response.status_code == 422  # FastAPI default validation error

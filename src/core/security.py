@@ -5,7 +5,7 @@ from core.config import settings
 
 async def validate_auth_headers(
     x_parse_rest_api_key: Annotated[str, Header()] = None,
-    x_jwt_kwy: Annotated[str, Header()] = None
+    x_jwt_kwy: Annotated[str, Header()] = None,
 ):
     if not x_parse_rest_api_key or not x_jwt_kwy:
         raise HTTPException(

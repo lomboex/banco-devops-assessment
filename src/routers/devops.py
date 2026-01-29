@@ -9,7 +9,7 @@ router = APIRouter()
 @router.post(
     "/DevOps", 
     response_model=MessageResponse,
-    dependencies=[Depends(validate_auth_headers)]
+    dependencies=[Depends(validate_auth_headers)],
 )
 async def devops_endpoint(message_in: MessageRequest):
     return MessageService.process_message(message_in)
