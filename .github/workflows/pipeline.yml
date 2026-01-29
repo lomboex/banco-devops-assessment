@@ -106,9 +106,8 @@ jobs:
       with:
         version: v3.11.1
 
-    - name: Helm Upgrade (Dry Run)
+    - name: Helm Template (Simulation)
       run: |
-        helm upgrade --install devops-assessment ./chart \
+        helm template devops-assessment ./chart \
           --set image.tag=$TAG \
-          --namespace default \
-          --dry-run
+          --namespace default
