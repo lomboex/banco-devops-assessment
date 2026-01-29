@@ -44,5 +44,5 @@ async def readiness_check():
 async def method_not_allowed_handler(request: Request, exc):
     return JSONResponse(
         status_code=405,
-        content="ERROR"
+        content="ERROR",
     )

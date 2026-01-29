@@ -7,7 +7,7 @@ router = APIRouter()
 
 
 @router.post(
-    "/DevOps", 
+    "/DevOps",
     response_model=MessageResponse,
     dependencies=[Depends(validate_auth_headers)],
 )
