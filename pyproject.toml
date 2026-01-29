@@ -1,0 +1,42 @@
+[project]
+name = "devops-assessment"
+version = "0.1.0"
+description = "Banco Pichincha DevOps Technical Assessment"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.109.0",
+    "uvicorn[standard]>=0.27.0",
+    "pydantic>=2.6.0",
+    "pydantic-settings>=2.0.0",
+    "structlog>=24.1.0",
+    "prometheus-fastapi-instrumentator>=7.0.0",
+    "prometheus-client>=0.19.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "httpx>=0.26.0",
+    "ruff>=0.1.15",
+    "black>=24.1.0",
+    "bandit>=1.7.7",
+]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+pythonpath = [
+    "src"
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+src = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
